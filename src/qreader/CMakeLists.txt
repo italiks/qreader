@@ -42,9 +42,13 @@ else()
     )
 endif()
 
+target_include_directories(qreader PRIVATE ${CMAKE_SOURCE_DIR}/src/third_party/spdlog/include)
+
 target_compile_definitions(qreader
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(qreader
   PRIVATE Qt5::Core Qt5::Quick)
+
+target_link_libraries(qreader PRIVATE spdlog_header_only)
 
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
