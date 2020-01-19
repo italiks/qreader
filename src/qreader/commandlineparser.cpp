@@ -54,4 +54,11 @@ CommandLineParser::parse(const QStringList& argumentList) const
   arguments.Logger = parser.value(log);
   return arguments;
 }
+
+CommandLineArguments
+CommandLineParser::Parse(const QStringList& argumentList)
+{
+  CommandLineParser parser;
+  return parser.parse(argumentList);
+}
 }

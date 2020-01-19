@@ -10,6 +10,8 @@ public:
   CommandLineParser();
 
   CommandLineArguments parse(const QStringList& argumentList) const;
+
+  static CommandLineArguments Parse(const QStringList& argumentList);
 };
 }
 
