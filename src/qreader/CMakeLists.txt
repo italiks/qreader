@@ -37,6 +37,9 @@ if(ANDROID)
 else()
     add_executable(qreader
       main.cpp
+      commandlinearguments.h
+      commandlineparser.h
+      commandlineparser.cpp
       qml.qrc
       ${TS_FILES}
     )
